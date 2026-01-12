@@ -1,0 +1,28 @@
+{
+  "name": "mcp-website-chatbot",
+  "version": "1.0.0",
+  "description": "Production-grade website chatbot with MCP integration for srinivasanramanujam.sbs",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "echo 'Build complete'"
+  },
+  "keywords": [
+    "chatbot",
+    "mcp",
+    "rag",
+    "website-assistant"
+  ],
+  "author": "Srinivasan Ramanujam",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  chatbot:
+    build: .
+    container_name: mcp-website-chatbot
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - WEBSITE_NAME=srinivasanramanujam.sbs
+      - WEBSITE_URL=https://srinivasanramanujam.sbs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+
+  # Optional: MCP Server (add your MCP server service here)
+  # mcp-server:
+  #   build:
+  #     context: ./mcp-server
+  #   container_name: mcp-server
+  #   ports:
+  #     - "3001:3001"
+  #   environment:
+  #     - PORT=3001
+  #   restart: unless-stopped
